@@ -1,9 +1,12 @@
 package com.example.demo.student;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
+@Component //we want to instantiate this in the StudentController class, so we identify it as a spring bean
 public class StudentService {
 
     public List<Student> getStudents() {
