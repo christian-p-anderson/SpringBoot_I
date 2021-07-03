@@ -4,21 +4,21 @@ import java.time.LocalDate;
 
 //This is considered the Student Model
 
-public class Student {
+public class StudentModel {
     private Long id;
     private String name;
     private String email;
     private LocalDate dob;
     private Integer age;
 
-    public Student() {
+    public StudentModel() {
     }
 
-    public Student(Long id,
-                   String name,
-                   String email,
-                   LocalDate dob,
-                   Integer age) {
+    public StudentModel(Long id,
+                        String name,
+                        String email,
+                        LocalDate dob,
+                        Integer age) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -27,10 +27,10 @@ public class Student {
     }
 
 //We include a constructor without the id, because the DB will create the id for us
-    public Student(String name,
-                   String email,
-                   LocalDate dob,
-                   Integer age) {
+    public StudentModel(String name,
+                        String email,
+                        LocalDate dob,
+                        Integer age) {
         this.name = name;
         this.email = email;
         this.dob = dob;

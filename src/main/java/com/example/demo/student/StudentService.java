@@ -9,17 +9,17 @@ import java.util.List;
 @Component //we want to instantiate this in the StudentController class, so we identify it as a spring bean
 public class StudentService {
 
-    public List<Student> getStudents() {
+    public List<StudentModel> getStudents() {
         return List.of(
 
-                new Student (
+                new StudentModel(
                         1L,
                         "Mariam",
                         "mariam.jamal@gmail.com",
                         LocalDate.of(2000, Month.JANUARY, 5),
                         21
                 ),
-                new Student (
+                new StudentModel(
                         2L,
                         "Christian",
                         "ca@gmail.com",
