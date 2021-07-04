@@ -24,8 +24,6 @@ public class StudentService {
                         "Christian",
                         "ca@gmail.com",
                         LocalDate.of(2000, Month.JUNE, 9),
-
-
                         21
                 )
         );
