@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 //This is considered the Student Model
-`
+
 @Entity // for Hibernate
 @Table // required to map StudentModel to the DB
 public class StudentModel {
