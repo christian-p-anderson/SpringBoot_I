@@ -1,10 +1,23 @@
 package com.example.demo.student;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 //This is considered the Student Model
-
+`
+@Entity // for Hibernate
+@Table // required to map StudentModel to the DB
 public class StudentModel {
+    @Id // required to map StudentModel to the DB
+    @SequenceGenerator(
+            name = "student_sequence",
+            sequenceName = "student_sequence",
+            allocationSize = 1
+    ) // required to map StudentModel to the DB
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_sequence"
+    ) // required to map StudentModel to the DB
     private Long id;
     private String name;
     private String email;
