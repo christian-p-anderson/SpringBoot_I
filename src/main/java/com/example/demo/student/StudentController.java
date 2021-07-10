@@ -2,9 +2,7 @@ package com.example.demo.student;
 //this contains all the resources for our API
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,5 +25,11 @@ public class StudentController {
     public List<StudentModel> getStudents() {
         return this.studentService.getStudents();
 
+    }
+
+    //the api that will take a payload and store it in the database
+    @PostMapping
+    public void registerNewStudent(@RequestBody StudentModel studentModel) {
+        studentService.addNewStudent(studentModel);
     }
 }
