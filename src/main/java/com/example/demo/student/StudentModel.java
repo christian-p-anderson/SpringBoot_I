@@ -2,6 +2,7 @@ package com.example.demo.student;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
 
 //This is considered the Student Model
 
@@ -22,6 +23,7 @@ public class StudentModel {
     private String name;
     private String email;
     private LocalDate dob;
+    @Transient //it says this field there is no need for you to be a column in our DB | it means we can calculate age first
     private Integer age;
 
     public StudentModel() {
@@ -30,24 +32,20 @@ public class StudentModel {
     public StudentModel(Long id,
                         String name,
                         String email,
-                        LocalDate dob,
-                        Integer age) {
+                        LocalDate dob) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.dob = dob;
-        this.age = age;
     }
 
 //We include a constructor without the id, because the DB will create the id for us
     public StudentModel(String name,
                         String email,
-                        LocalDate dob,
-                        Integer age) {
+                        LocalDate dob) {
         this.name = name;
         this.email = email;
         this.dob = dob;
-        this.age = age;
     }
 
     public Long getId() {
@@ -83,7 +81,7 @@ public class StudentModel {
     }
 
     public Integer getAge() {
-        return age;
+        return Period.between(this.dob, LocalDate.now()).getYears();
     }
 
     public void setAge(Integer age) {
