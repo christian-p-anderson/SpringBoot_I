@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.List;
 
 import static java.time.Month.JANUARY;
 
@@ -29,6 +30,10 @@ public class StudentConfig {
                     "alex@gmail.com",
                     LocalDate.of(2004, JANUARY, 5),
                     21
+            );
+
+            studentRepository.saveAll(
+                    List.of(miriam, alex)
             );
         };
     };
